@@ -1,0 +1,22 @@
+def read_and_write_file(input_filename, output_filename):
+    """
+    Reads from input_filename and writes a modified version to output_filename.
+    In this example, the modification is converting text to uppercase.
+    """
+    try:
+        with open(input_filename, 'r') as infile:
+            content = infile.read()
+            # Modify content - here we convert to uppercase
+            modified_content = content.upper()
+
+        with open(output_filename, 'w') as outfile:
+            outfile.write(modified_content)
+
+        print(f"\n✅ File successfully read from '{input_filename}' and written to '{output_filename}'.\n")
+
+    except FileNotFoundError:
+        print(f"\n❌ Error: The file '{input_filename}' was not found.\n")
+    except IOError as e:
+        print(f"\n❌ Error: An I/O error occurred: {e}\n")
+
+
