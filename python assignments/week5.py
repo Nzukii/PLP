@@ -1,0 +1,57 @@
+#question 1
+class Device:
+    def __init__(self, brand, model): 
+        self.brand = brand
+        self.model = model
+
+    def display_info(self):
+        return f"Brand: {self.brand}, Model: {self.model}"
+
+class Smartphone(Device):
+    def __init__(self, brand, model, storage_gb, color):
+        super().__init__(brand, model) 
+        self.storage_gb = storage_gb
+        self.color = color
+
+    def make_call(self):
+        return f"Making a call from {self.brand} {self.model}."
+
+    def send_message(self, message):
+        return f"Sending message: '{message}' from {self.brand} {self.model}."
+
+    def display_info(self):  
+        return f"Smartphone: {self.brand} {self.model}, Storage: {self.storage_gb}GB, Color: {self.color}"
+
+# Create objects
+my_phone = Smartphone("Samsung", "Galaxy S23", 256, "Black")
+your_phone = Smartphone("Apple", "iPhone 15 Pro", 512, "Titanium")
+
+
+
+#question 2
+
+class Vehicle:
+    def move(self):
+        pass
+
+class Car(Vehicle):
+    def move(self):
+        return "Driving 🚗"
+
+class Plane(Vehicle):
+    def move(self):
+        return "Flying ✈"
+
+class Boat(Vehicle):
+    def move(self):
+        return "Sailing ⛵"
+
+# Create instances of the vehicle classes
+my_car = Car()
+my_plane = Plane()
+my_boat = Boat()
+
+# Demonstrate polymorphism by calling the move() method on different objects
+print(f"Car moves: {my_car.move()}")
+print(f"Plane moves: {my_plane.move()}")
+print(f"Boat moves: {my_boat.move()}")
