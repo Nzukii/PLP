@@ -1,0 +1,21 @@
+#question one 
+file= open ('week4.pdf','w')
+file.write("With the current weather, i am not sure if i will have anymore coffee to attend the python classes!")
+
+ #Adding new data
+with open('week4.pdf', 'a') as file:
+    file.write("It is unbelievably cold")
+
+#reading the file
+file= open ('week4.pdf','r')    
+data = file .read()
+print(data) 
+
+#question 2
+try:
+    file = open('week4.pdf', 'r')
+    data = file.read()
+    print(data)
+    
+   except FileNotFoundError:
+    print("File not found. Please check the file path and try again.") 
